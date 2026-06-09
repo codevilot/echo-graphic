@@ -1,0 +1,22 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  github-release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create source archive
+        run: |
+          git archive --format=tar.gz --prefix=echo-graphic-${GITHUB_REF_NAME}/ ${GITHUB_REF_NAME} > echo-graphic-${GITHUB_REF_NAME}.tar.gz
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: echo-graphic-${{ github.ref_name }}.tar.gz
+          generate_release_notes: true
