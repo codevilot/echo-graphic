@@ -1,11 +1,11 @@
-#include "ros2_echo_graphic/mock_publishers.hpp"
+#include "echo_graphic/mock_publishers.hpp"
 
 #include <cmath>
 #include <string>
 
 #include "sensor_msgs/msg/laser_scan.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 namespace
 {
@@ -64,4 +64,4 @@ std::shared_ptr<rclcpp::Node> create_mock_scan_publisher(const std::string & top
   return std::make_shared<MockScanPublisher>(topic_name, hz);
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

@@ -1,4 +1,4 @@
-#include "ros2_echo_graphic/topic_discovery.hpp"
+#include "echo_graphic/topic_discovery.hpp"
 
 #include <chrono>
 #include <iostream>
@@ -6,7 +6,7 @@
 
 using namespace std::chrono_literals;
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 std::optional<std::string> find_topic_type(
@@ -35,4 +35,4 @@ std::optional<std::string> find_topic_type(
   return std::nullopt;
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

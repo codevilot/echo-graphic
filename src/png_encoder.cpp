@@ -1,8 +1,8 @@
-#include "ros2_echo_graphic/png_encoder.hpp"
+#include "echo_graphic/png_encoder.hpp"
 
 #include <algorithm>
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 namespace
 {
@@ -101,4 +101,4 @@ std::vector<uint8_t> encode_png_rgb(int width, int height, const std::vector<uin
   return png;
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

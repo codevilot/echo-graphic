@@ -1,6 +1,6 @@
-#include "ros2_echo_graphic/rate_limiter.hpp"
+#include "echo_graphic/rate_limiter.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 RateLimiter::RateLimiter(double fps)
@@ -24,4 +24,4 @@ bool RateLimiter::ready()
   return true;
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

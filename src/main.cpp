@@ -6,12 +6,12 @@
 
 #include "rclcpp/rclcpp.hpp"
 
-#include "ros2_echo_graphic/compressed_image_viewer.hpp"
-#include "ros2_echo_graphic/dds_transport.hpp"
-#include "ros2_echo_graphic/image_viewer.hpp"
-#include "ros2_echo_graphic/joint_state_viewer.hpp"
-#include "ros2_echo_graphic/lidar_viewer.hpp"
-#include "ros2_echo_graphic/topic_discovery.hpp"
+#include "echo_graphic/compressed_image_viewer.hpp"
+#include "echo_graphic/dds_transport.hpp"
+#include "echo_graphic/image_viewer.hpp"
+#include "echo_graphic/joint_state_viewer.hpp"
+#include "echo_graphic/lidar_viewer.hpp"
+#include "echo_graphic/topic_discovery.hpp"
 
 namespace
 {
@@ -24,7 +24,7 @@ struct CliOptions
 
 void print_usage()
 {
-  std::cerr << "Usage: ros2 run ros2_echo_graphic echo-graphic <topic_name> [--fps <fps>]\n";
+  std::cerr << "Usage: ros2 run echo_graphic echo-graphic <topic_name> [--fps <fps>]\n";
 }
 
 CliOptions parse_args(int argc, char ** argv)
@@ -79,10 +79,10 @@ std::shared_ptr<rclcpp::Node> create_viewer(
   const std::string & topic_type,
   double fps)
 {
-  using ros2_echo_graphic::CompressedImageViewer;
-  using ros2_echo_graphic::ImageViewer;
-  using ros2_echo_graphic::JointStateViewer;
-  using ros2_echo_graphic::LidarViewer;
+  using echo_graphic::CompressedImageViewer;
+  using echo_graphic::ImageViewer;
+  using echo_graphic::JointStateViewer;
+  using echo_graphic::LidarViewer;
 
   if (is_image(topic_type)) {
     return std::make_shared<ImageViewer>(topic_name, topic_type, fps);
@@ -106,13 +106,13 @@ std::shared_ptr<rclcpp::Node> create_viewer(
 
 int main(int argc, char ** argv)
 {
-  ros2_echo_graphic::configure_default_dds_transport();
+  echo_graphic::configure_default_dds_transport();
   rclcpp::init(argc, argv);
 
   try {
     const CliOptions options = parse_args(argc, argv);
     auto checker = std::make_shared<rclcpp::Node>("echo_graphic_type_checker");
-    const auto topic_type = ros2_echo_graphic::find_topic_type(checker, options.topic_name);
+    const auto topic_type = echo_graphic::find_topic_type(checker, options.topic_name);
     if (!topic_type.has_value()) {
       std::cerr << "[Error] Topic '" << options.topic_name << "' was not found or is not active.\n";
       rclcpp::shutdown();

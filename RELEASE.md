@@ -7,8 +7,8 @@
 3. Create and push a matching tag:
 
 ```bash
-git tag -a v0.1.0 -m "echo-graphic v0.1.0"
-git push origin main v0.1.0
+git tag -a v0.1.1 -m "echo-graphic v0.1.1"
+git push origin main v0.1.1
 ```
 
 The `release` GitHub Action creates a GitHub Release and attaches:
@@ -19,7 +19,7 @@ The `release` GitHub Action creates a GitHub Release and attaches:
 Users can install the downloaded `.deb` after ROS 2 Jazzy is configured:
 
 ```bash
-sudo apt install ./ros-jazzy-ros2-echo-graphic_*.deb
+sudo apt install ./ros-jazzy-echo-graphic_*.deb
 ```
 
 ## ROS build farm release
@@ -41,7 +41,7 @@ bloom-release \
   --rosdistro jazzy \
   --track jazzy \
   --new-track \
-  ros2_echo_graphic
+  echo_graphic
 ```
 
 Use this upstream repository when bloom prompts for it:

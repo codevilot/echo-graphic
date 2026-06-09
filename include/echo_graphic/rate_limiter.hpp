@@ -2,7 +2,7 @@
 
 #include <chrono>
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 class RateLimiter
@@ -18,4 +18,4 @@ private:
   bool rendered_once_{false};
 };
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

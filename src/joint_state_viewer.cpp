@@ -1,4 +1,4 @@
-#include "ros2_echo_graphic/joint_state_viewer.hpp"
+#include "echo_graphic/joint_state_viewer.hpp"
 
 #include <algorithm>
 #include <cmath>
@@ -6,9 +6,9 @@
 #include <iostream>
 #include <sstream>
 
-#include "ros2_echo_graphic/terminal_utils.hpp"
+#include "echo_graphic/terminal_utils.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 JointStateViewer::JointStateViewer(const std::string & topic_name, const std::string & topic_type, double fps)
@@ -112,4 +112,4 @@ std::string JointStateViewer::format_hz() const
   return out.str();
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

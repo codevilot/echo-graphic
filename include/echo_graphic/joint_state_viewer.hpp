@@ -8,9 +8,9 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 
-#include "ros2_echo_graphic/rate_limiter.hpp"
+#include "echo_graphic/rate_limiter.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 class JointStateViewer : public rclcpp::Node
@@ -30,4 +30,4 @@ private:
   std::deque<std::chrono::steady_clock::time_point> message_times_;
 };
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

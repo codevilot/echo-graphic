@@ -5,9 +5,9 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/compressed_image.hpp"
 
-#include "ros2_echo_graphic/rate_limiter.hpp"
+#include "echo_graphic/rate_limiter.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 class CompressedImageViewer : public rclcpp::Node
@@ -22,4 +22,4 @@ private:
   rclcpp::Subscription<sensor_msgs::msg::CompressedImage>::SharedPtr subscription_;
 };
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

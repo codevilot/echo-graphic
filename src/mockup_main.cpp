@@ -5,8 +5,8 @@
 
 #include "rclcpp/rclcpp.hpp"
 
-#include "ros2_echo_graphic/dds_transport.hpp"
-#include "ros2_echo_graphic/mock_publishers.hpp"
+#include "echo_graphic/dds_transport.hpp"
+#include "echo_graphic/mock_publishers.hpp"
 
 namespace
 {
@@ -20,7 +20,7 @@ struct CliOptions
 
 void print_usage()
 {
-  std::cerr << "Usage: ros2 run ros2_echo_graphic echo-graphic-mockup "
+  std::cerr << "Usage: ros2 run echo_graphic echo-graphic-mockup "
             << "<image|compressed_image|scan|joint_states> [--topic <topic>] [--hz <hz>]\n";
 }
 
@@ -57,7 +57,7 @@ CliOptions parse_args(int argc, char ** argv)
     throw std::invalid_argument("mock kind is required");
   }
   if (options.topic_name.empty()) {
-    options.topic_name = ros2_echo_graphic::default_mock_topic(options.kind);
+    options.topic_name = echo_graphic::default_mock_topic(options.kind);
   }
   return options;
 }
@@ -66,12 +66,12 @@ CliOptions parse_args(int argc, char ** argv)
 
 int main(int argc, char ** argv)
 {
-  ros2_echo_graphic::configure_default_dds_transport();
+  echo_graphic::configure_default_dds_transport();
   rclcpp::init(argc, argv);
 
   try {
     const CliOptions options = parse_args(argc, argv);
-    rclcpp::spin(ros2_echo_graphic::create_mock_publisher(
+    rclcpp::spin(echo_graphic::create_mock_publisher(
       options.kind, options.topic_name, options.hz));
   } catch (const std::exception & error) {
     std::cerr << "[Error] " << error.what() << "\n";

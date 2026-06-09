@@ -32,7 +32,7 @@ From a ROS 2 workspace:
 
 ```bash
 source /opt/ros/$ROS_DISTRO/setup.bash
-colcon build --packages-select ros2_echo_graphic
+colcon build --packages-select echo_graphic
 source install/setup.bash
 ```
 
@@ -44,7 +44,7 @@ cd ~/ros2_ws/src
 git clone https://github.com/codevilot/echo-graphic.git
 cd ~/ros2_ws
 source /opt/ros/$ROS_DISTRO/setup.bash
-colcon build --packages-select ros2_echo_graphic
+colcon build --packages-select echo_graphic
 source install/setup.bash
 ```
 
@@ -53,25 +53,25 @@ source install/setup.bash
 View a raw image topic:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic /camera/image_raw --fps 10
+ros2 run echo_graphic echo-graphic /camera/image_raw --fps 10
 ```
 
 View a compressed image topic:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic /camera/image_raw/compressed --fps 10
+ros2 run echo_graphic echo-graphic /camera/image_raw/compressed --fps 10
 ```
 
 View a laser scan:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic /scan --fps 10
+ros2 run echo_graphic echo-graphic /scan --fps 10
 ```
 
 View joint states:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic /joint_states --fps 10
+ros2 run echo_graphic echo-graphic /joint_states --fps 10
 ```
 
 If the topic is not active yet, `echo-graphic` waits instead of exiting. A waiting message is printed every 10 seconds.
@@ -83,35 +83,35 @@ Use the built-in mock publishers for local testing.
 Raw image:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic-mockup image
-ros2 run ros2_echo_graphic echo-graphic /camera/image_raw
+ros2 run echo_graphic echo-graphic-mockup image
+ros2 run echo_graphic echo-graphic /camera/image_raw
 ```
 
 Compressed image:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic-mockup compressed_image
-ros2 run ros2_echo_graphic echo-graphic /camera/image_raw/compressed
+ros2 run echo_graphic echo-graphic-mockup compressed_image
+ros2 run echo_graphic echo-graphic /camera/image_raw/compressed
 ```
 
 Laser scan:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic-mockup scan
-ros2 run ros2_echo_graphic echo-graphic /scan
+ros2 run echo_graphic echo-graphic-mockup scan
+ros2 run echo_graphic echo-graphic /scan
 ```
 
 Joint state:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic-mockup joint_states
-ros2 run ros2_echo_graphic echo-graphic /joint_states
+ros2 run echo_graphic echo-graphic-mockup joint_states
+ros2 run echo_graphic echo-graphic /joint_states
 ```
 
 Mock publishers accept `--topic` and `--hz`:
 
 ```bash
-ros2 run ros2_echo_graphic echo-graphic-mockup scan --topic /debug_scan --hz 5
+ros2 run echo_graphic echo-graphic-mockup scan --topic /debug_scan --hz 5
 ```
 
 ## Notes

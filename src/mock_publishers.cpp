@@ -1,8 +1,8 @@
-#include "ros2_echo_graphic/mock_publishers.hpp"
+#include "echo_graphic/mock_publishers.hpp"
 
 #include <stdexcept>
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 std::string default_mock_topic(const std::string & kind)
@@ -42,4 +42,4 @@ std::shared_ptr<rclcpp::Node> create_mock_publisher(
   throw std::invalid_argument("kind must be one of: image, compressed_image, scan, joint_states");
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

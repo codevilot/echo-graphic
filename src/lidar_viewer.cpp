@@ -1,11 +1,11 @@
-#include "ros2_echo_graphic/lidar_viewer.hpp"
+#include "echo_graphic/lidar_viewer.hpp"
 
 #include <cmath>
 #include <iostream>
 #include <sstream>
 #include <vector>
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 LidarViewer::LidarViewer(const std::string & topic_name, const std::string & topic_type, double fps)
@@ -57,4 +57,4 @@ void LidarViewer::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   std::cout << output.str() << std::flush;
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

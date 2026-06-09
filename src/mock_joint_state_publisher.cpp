@@ -1,11 +1,11 @@
-#include "ros2_echo_graphic/mock_publishers.hpp"
+#include "echo_graphic/mock_publishers.hpp"
 
 #include <cmath>
 #include <string>
 
 #include "sensor_msgs/msg/joint_state.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 namespace
 {
@@ -72,4 +72,4 @@ std::shared_ptr<rclcpp::Node> create_mock_joint_state_publisher(const std::strin
   return std::make_shared<MockJointStatePublisher>(topic_name, hz);
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

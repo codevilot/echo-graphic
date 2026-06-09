@@ -1,12 +1,12 @@
-#include "ros2_echo_graphic/compressed_image_viewer.hpp"
+#include "echo_graphic/compressed_image_viewer.hpp"
 
 #include <cstdio>
 #include <iostream>
 #include <stdexcept>
 
-#include "ros2_echo_graphic/terminal_utils.hpp"
+#include "echo_graphic/terminal_utils.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 CompressedImageViewer::CompressedImageViewer(
@@ -42,4 +42,4 @@ void CompressedImageViewer::callback(const sensor_msgs::msg::CompressedImage::Sh
   pclose(pipe);
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

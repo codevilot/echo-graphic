@@ -1,4 +1,4 @@
-#include "ros2_echo_graphic/image_viewer.hpp"
+#include "echo_graphic/image_viewer.hpp"
 
 #include <algorithm>
 #include <cstdio>
@@ -6,10 +6,10 @@
 #include <stdexcept>
 #include <vector>
 
-#include "ros2_echo_graphic/png_encoder.hpp"
-#include "ros2_echo_graphic/terminal_utils.hpp"
+#include "echo_graphic/png_encoder.hpp"
+#include "echo_graphic/terminal_utils.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 ImageViewer::ImageViewer(const std::string & topic_name, const std::string & topic_type, double fps)
@@ -89,4 +89,4 @@ std::vector<uint8_t> ImageViewer::to_rgb(const sensor_msgs::msg::Image & msg) co
   return rgb;
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

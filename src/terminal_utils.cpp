@@ -1,4 +1,4 @@
-#include "ros2_echo_graphic/terminal_utils.hpp"
+#include "echo_graphic/terminal_utils.hpp"
 
 #include <algorithm>
 #include <cmath>
@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <sstream>
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 
 bool command_exists(const char * command)
@@ -99,4 +99,4 @@ std::string sparkline(const std::deque<double> & values, size_t width)
   return result;
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic

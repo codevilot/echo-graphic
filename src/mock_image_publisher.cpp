@@ -1,15 +1,15 @@
-#include "ros2_echo_graphic/mock_publishers.hpp"
+#include "echo_graphic/mock_publishers.hpp"
 
 #include <algorithm>
 #include <cstdint>
 #include <string>
 #include <vector>
 
-#include "ros2_echo_graphic/png_encoder.hpp"
+#include "echo_graphic/png_encoder.hpp"
 #include "sensor_msgs/msg/compressed_image.hpp"
 #include "sensor_msgs/msg/image.hpp"
 
-namespace ros2_echo_graphic
+namespace echo_graphic
 {
 namespace
 {
@@ -107,4 +107,4 @@ std::shared_ptr<rclcpp::Node> create_mock_compressed_image_publisher(const std::
   return std::make_shared<MockCompressedImagePublisher>(topic_name, hz);
 }
 
-}  // namespace ros2_echo_graphic
+}  // namespace echo_graphic
