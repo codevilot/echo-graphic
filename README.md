@@ -20,7 +20,13 @@ sudo apt update
 sudo apt install python3-colcon-common-extensions chafa
 ```
 
-## Build
+## Install
+
+### APT
+
+APT packages are not available yet. Until this package is released through the ROS build farm, install it from source.
+
+### From Source
 
 From a ROS 2 workspace:
 
